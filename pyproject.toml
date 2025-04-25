@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "goph420_lab04"
+version = "0.0.1"
+authors = [
+{ name="Avneet Kaur", email="avneet.kaur3@ucalgary.ca" },
+]
+description="Lab 04 - Implementation of linear least squares regression."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+"numpy",
+"matplotlib",
+]
+classifiers = [
+"Programming Language :: Python :: 3",
+"Operating System :: OS Independent",
+"License :: OSI Approved :: GNU General Public License v3",
+]
+[project.urls]
+"Homepage" = "https://github.com/avneet-kaur3/goph420-w2025-lab04-stAK"
