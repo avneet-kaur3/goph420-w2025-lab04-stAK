@@ -18,7 +18,7 @@ def main():
     #definining an empty list for storing M, N and the values from the linear regression function for each time interval. the time intervals are 12 hours.
     trend_data = []
     for start, end in time_intervals:
-        time_indices = np.argwhere((t_data >= start) and (t_data < end)).flatten()
+        time_indices = np.argwhere((t_data >= start) & (t_data < end)).flatten()
         M_window = M_data[time_indices]
         N_window = [np.count_nonzero(M_window >= threshold) for threshold in magnitude_points]
         log_N_window = np.log(np.array(N_window) + 1e-5) #the factor of 1e-5 ensures stability with zero errors.
