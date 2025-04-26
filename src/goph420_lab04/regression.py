@@ -23,7 +23,7 @@ def multi_regress(y, Z):
     y = np.asarray(y).reshape(-1, 1)
     Z = np.asarray(Z)
     #similar to the example in class, creating a column of 1s and horizontally stacking it to Z to compute the coefficients.
-    Z = np.hstack([np.ones((Z.shape[0], 1)), Z])
+    Z = np.hstack([np.ones((Z.shape[0], 1)), Z.reshape(-1, 1)])
     #computing the coefficients according to the equation in lecture notes and lab manual.
     coefficients = np.linalg.inv(Z.T @ Z) @ Z.T @ y
     #computing the residuals.
