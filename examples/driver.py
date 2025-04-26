@@ -39,7 +39,7 @@ def main():
         a, e, rsq = multi_regress(y, Z)
 
         #appending the data to our original empty list to store the different values of coefficients.
-        trend_data.append((start, end, a[0], a[1], e, rsq))
+        trend_data.append((start, end, a[0], a[1], rsq))
 
         #plotting the linear data from the text file and the calculated best fit line.
         plt.figure(figsize=(10, 8))
@@ -55,7 +55,7 @@ def main():
         plt.show()
 
     trend_data = np.array(trend_data)
-    print("Time Interval | a (Intercept) | b (Gradient) | e Residual | R^2")
+    print("Time Interval | a (Intercept) | b (Gradient) | R^2")
     print(trend_data)
 
 
