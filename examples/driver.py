@@ -25,16 +25,17 @@ def main():
 
         plt.figure(figsize=(10, 8))
         plt.plot(magnitude_points, N_window)
-        plt.title("N versus M for time interval: {start} to {end} hours")
+        plt.title(f"N versus M for time interval: {start} to {end} hours")
         plt.xlabel("Magnitude M")
         plt.ylabel("Number of Events N")
         plt.grid(True)
-        plt.savefig(f"dataplot_{start}_{end}.png", dpi=300)
+        saving_directory = "C:/Users/HP/Desktop/University Courses/Winter 2025/GOPH 420/goph420-w2025-lab04-stAK/goph420-w2025-lab04-stAK/figures/"
+        plt.savefig(f"{saving_directory}dataplot_{start}_{end}.png", dpi=300)
         plt.show()
 
         #performing the multiple linear regression function.
-        y = magnitude_points
-        Z = log_N_window
+        y = log_N_window
+        Z = magnitude_points
         a, e, rsq = multi_regress(y, Z)
 
         #appending the data to our original empty list to store the different values of coefficients.
@@ -44,7 +45,7 @@ def main():
         plt.figure(figsize=(10, 8))
         plt.scatter(magnitude_points, log_N_window, label="Observed Data", color="blue")
         plt.plot(magnitude_points, a[0]+(magnitude_points*a[1]), label="Best Fit Line", color="red")
-        plt.title("log N versus M for time interval: {start} to {end} hours")
+        plt.title(f"log N versus M for time interval: {start} to {end} hours")
         plt.xlabel("Magnitude M")
         plt.ylabel("log(N)")
         plt.grid(True)
