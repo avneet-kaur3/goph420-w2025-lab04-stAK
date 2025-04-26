@@ -8,7 +8,7 @@ def main():
     magnitudes for which the number of events N that can be calculated are chosen to be -0.5, -0.25, 0.0, 0.25 and 0.5."""
 
     #importing data from the text file.
-    data = np.loadtxt()
+    data = np.loadtxt("M_data1.txt")
     t_data = data[:, 0]
     M_data = data[:, 1]
 
@@ -48,7 +48,9 @@ def main():
         plt.xlabel("Magnitude M")
         plt.ylabel("log(N)")
         plt.grid(True)
-        plt.savefig(f"bestfitplot_{start}_{end}.png", dpi=300)
+        plt.legend()
+        saving_directory = "C:/Users/HP/Desktop/University Courses/Winter 2025/GOPH 420/goph420-w2025-lab04-stAK/goph420-w2025-lab04-stAK/figures/"
+        plt.savefig(f"{saving_directory}bestfitplot_{start}_{end}.png", dpi=300)
         plt.show()
 
     trend_data = np.array(trend_data)
