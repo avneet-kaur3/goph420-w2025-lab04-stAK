@@ -1,4 +1,4 @@
-from lab_04.regression import multi_regress
+from goph420_lab04.regression import multi_regress
 import numpy as np
 import matplotlib.pyplot as plt
 
